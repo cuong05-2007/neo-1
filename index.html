@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="https://t4.ftcdn.net/jpg/03/23/82/99/360_F_323829966_H32wLhoouiPinJ66KyggCvqQ2dFPuuQ1.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poster NeoGesture</title>
     <style>
         body {
@@ -14,16 +14,16 @@
             background-position: center;
             background-attachment: fixed;
             text-align: center;
-            color: white; /* Đảm bảo chữ dễ đọc */
+            color: white;
         }
         .container {
             width: 80%;
             margin: auto;
-            background: rgba(0, 0, 0, 0.8); /* Tăng độ mờ để dễ đọc nội dung */
+            background: rgba(0, 0, 0, 0.85);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            border: 5px solid #007BFF; 
+            border: 5px solid #007BFF;
         }
         h1 {
             color: #00AFFF;
@@ -37,10 +37,23 @@
             background: rgba(255, 255, 255, 0.2);
             padding: 10px;
             border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .section:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .content {
+            display: none;
+            padding-top: 10px;
         }
         .highlight {
             font-weight: bold;
             color: #FFD700;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
     </style>
 </head>
@@ -50,49 +63,84 @@
         <p><span class="highlight">Lớp:</span> 12A2 – Nhóm 5 – Năm học 2024 – 2025</p>
         <p><span class="highlight">Tác giả:</span></p>
         
-            <li>Lâm Chí Cường (Nhóm trưởng)</li> <br>
-            <li>Trần Anh Đạt</li><br>
-            <li>Lê Khang Du</li><br>
-            <li>Mai Phúc Đông</li><br>
-            <li>Lê Hoàng Thiên Phúc</li><br>
-        
-        
-        <div class="section">
-            <h2>Kiến thức nền</h2>
-            <p>Dự án NeoGesture dựa trên công nghệ nhận diện bàn tay bằng OpenCV và MediaPipe để xác định cử chỉ ngón tay.</p>
+        <ul>
+            <li>📌 Lâm Chí Cường (Nhóm trưởng)</li>
+            <li>📌 Trần Anh Đạt</li>
+            <li>📌 Lê Khang Du</li>
+            <li>📌 Mai Phúc Đông</li>
+            <li>📌 Lê Hoàng Thiên Phúc</li>
+        </ul>
+
+        <div class="section" onclick="toggleContent(this)">
+            <h2>🎯 Kiến thức nền</h2>
+            <div class="content">
+                <p>Dự án NeoGesture sử dụng công nghệ nhận diện bàn tay bằng OpenCV và MediaPipe.</p>
+                <p><strong>📌 OpenCV:</strong> Thư viện xử lý ảnh mạnh mẽ, hỗ trợ nhiều thuật toán thị giác máy tính.</p>
+                <p><strong>📌 MediaPipe:</strong> Cung cấp mô hình AI nhận diện bàn tay theo thời gian thực, giúp xác định chính xác vị trí các khớp ngón tay.</p>
+                <p>🚀 Ứng dụng những công nghệ này giúp hệ thống có thể theo dõi và phân tích cử chỉ bàn tay một cách nhanh chóng.</p>
+            </div>
         </div>
-        
-        <div class="section">
-            <h2>Quy trình</h2>
-            <p>1. Thu thập dữ liệu hình ảnh bàn tay từ camera.</p>
-            <p>2. Xử lý ảnh và nhận diện vị trí các ngón tay.</p>
-            <p>3. Xác định số lượng ngón tay giơ lên và hiển thị kết quả.</p>
-            <p>4. Hiển thị thông tin và phản hồi lên màn hình.</p>
+
+        <div class="section" onclick="toggleContent(this)">
+            <h2>⚙️ Quy trình hoạt động</h2>
+            <div class="content">
+                <p>1️⃣ Hệ thống sử dụng webcam để thu thập hình ảnh bàn tay.</p>
+                <p>2️⃣ MediaPipe xử lý ảnh và xác định vị trí 21 điểm trên bàn tay.</p>
+                <p>3️⃣ Thuật toán phân tích vị trí các điểm và xác định số lượng ngón tay giơ lên.</p>
+                <p>4️⃣ Kết quả được hiển thị lên màn hình theo thời gian thực.</p>
+                <p>🔎 Ứng dụng có thể được mở rộng để nhận diện cử chỉ phức tạp hơn, chẳng hạn như ký hiệu ngôn ngữ cho người khiếm thính.</p>
+            </div>
         </div>
-        
-        <div class="section">
-            <h2>Thông tin sản phẩm</h2>
-            <p>NeoGesture là một ứng dụng sử dụng webcam để phát hiện bàn tay và xác định số ngón tay giơ lên. Công nghệ này có thể áp dụng vào điều khiển thiết bị thông minh hoặc hỗ trợ người khiếm thính.</p>
+
+        <div class="section" onclick="toggleContent(this)">
+            <h2>🖥️ Thông tin sản phẩm</h2>
+            <div class="content">
+                <p><strong>NeoGesture</strong> là một ứng dụng hỗ trợ nhận diện bàn tay thông qua webcam.</p>
+                <p>🌟 Công nghệ này có thể được ứng dụng vào:</p>
+                <ul>
+                    <li>✅ Điều khiển thiết bị thông minh bằng cử chỉ tay.</li>
+                    <li>✅ Hỗ trợ giao tiếp cho người khiếm thính.</li>
+                    <li>✅ Ứng dụng vào thực tế ảo (VR) và trò chơi.</li>
+                </ul>
+            </div>
         </div>
-        
-        <div class="section">
-            <h2>Ưu điểm</h2>
-            <p>- Giao diện đơn giản, dễ sử dụng.</p>
-            <p>- Nhận diện nhanh và chính xác.</p>
-            <p>- Ứng dụng linh hoạt trong nhiều lĩnh vực như giáo dục, công nghệ hỗ trợ.</p>
+
+        <div class="section" onclick="toggleContent(this)">
+            <h2>🚀 Ưu điểm nổi bật</h2>
+            <div class="content">
+                <p>✔️ Giao diện thân thiện, dễ sử dụng.</p>
+                <p>✔️ Nhận diện nhanh với độ chính xác cao.</p>
+                <p>✔️ Không yêu cầu phần cứng đặc biệt, chỉ cần một webcam cơ bản.</p>
+                <p>✔️ Mở rộng tiềm năng ứng dụng trong giáo dục và công nghệ hỗ trợ.</p>
+            </div>
         </div>
-        
-        <div class="section">
-            <h2>Khuyến cáo</h2>
-            <p>- Cần đảm bảo đủ ánh sáng để tăng độ chính xác khi nhận diện.</p>
-            <p>- Tránh để vật cản che khuất bàn tay khi sử dụng.</p>
-            <p>- Chỉ hoạt động tốt trên các webcam có độ phân giải tối thiểu 720p.</p>
+
+        <div class="section" onclick="toggleContent(this)">
+            <h2>⚠️ Khuyến cáo khi sử dụng</h2>
+            <div class="content">
+                <p>⚡ Để đảm bảo kết quả chính xác, người dùng cần lưu ý:</p>
+                <ul>
+                    <li>💡 Đảm bảo đủ ánh sáng khi sử dụng.</li>
+                    <li>🙅‍♂️ Tránh vật cản che khuất bàn tay.</li>
+                    <li>📷 Sử dụng webcam có độ phân giải tối thiểu 720p để có kết quả tốt nhất.</li>
+                </ul>
+            </div>
         </div>
-        
-        <div class="section">
-            <h2>Giáo viên hướng dẫn</h2>
-            <p>Thầy [Phạm Văn Tùng]</p>
+
+        <div class="section" onclick="toggleContent(this)">
+            <h2>👨‍🏫 Giáo viên hướng dẫn</h2>
+            <div class="content">
+                <p>🔹 Thầy <strong>Phạm Văn Tùng</strong></p>
+                <p>📝 Cung cấp định hướng và hỗ trợ nhóm trong quá trình nghiên cứu và phát triển dự án.</p>
+            </div>
         </div>
     </div>
+
+    <script>
+        function toggleContent(section) {
+            let content = section.querySelector('.content');
+            content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
 </body>
 </html>
