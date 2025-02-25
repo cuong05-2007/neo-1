@@ -5,24 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poster NeoGesture</title>
   <style>
-    /* Style cho video background */
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Video phủ kín màn hình */
-      z-index: -1;       /* Ở phía sau các phần tử khác */
-    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
+      background-image: url("https://www.tlciscreative.com/wp-content/uploads/2024/08/A.I-2.gif");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       text-align: center;
       color: white;
       animation: fadeIn 1s ease-in-out;
-      background: none; /* Loại bỏ background mặc định */
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-10px); }
@@ -65,6 +58,7 @@
       opacity: 0;
       transition: max-height 1.2s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
+    /* Sử dụng keyframes slideDown với khoảng cách lớn hơn để tạo cảm giác "xuống" */
     .content.show {
       max-height: 1000px;
       opacity: 1;
@@ -89,12 +83,6 @@
   </style>
 </head>
 <body>
-  <!-- Phần video background -->
-  <video autoplay loop muted class="video-bg">
-    <source src="snaptik.me_xzXUkIKp.mp4" type="video/mp4">
-    Trình duyệt của bạn không hỗ trợ video.
-  </video>
-
   <div class="container">
     <h1>NeoGesture</h1>
     <p><span class="highlight">Lớp:</span> 12A2 – Nhóm 5 – Năm học 2024 – 2025</p>
@@ -106,16 +94,16 @@
       <li>😁 Mai Phúc Đông</li>
       <li>😬 Lê Hoàng Thiên Phúc</li>
     </ul>
-
-    <!-- Mục Sản phẩm -->
+	    <!-- Mục Sản phẩm mới -->
     <div class="section" onclick="toggleContent(this)">
       <h2>🛍️ Sản phẩm</h2>
       <div class="content">
-        <p>🎦 Truy cập vào trang sản phẩm nhận diện tay trái: <a href="https://cuong05-2007.github.io/neo2/" target="_blank">https://cuong05-2007.github.io/neo2/</a></p>
+        <p>🎦Truy cập vào trang sản phẩm nhận diện tay trái: <a href="https://cuong05-2007.github.io/neo2/" target="_blank">https://cuong05-2007.github.io/neo2/</a></p>
       </div>
-    </div>
+    
+    
+  </div>
 
-    <!-- Mục Kiến thức nền -->
     <div class="section" onclick="toggleContent(this)">
       <h2>🎯 Kiến thức nền</h2>
       <div class="content">
@@ -126,7 +114,6 @@
       </div>
     </div>
 
-    <!-- Mục Quy trình hoạt động & Lý giải -->
     <div class="section" onclick="toggleContent(this)">
       <h2>⚙️ Quy trình hoạt động & Lý giải</h2>
       <div class="content">
@@ -138,7 +125,6 @@
       </div>
     </div>
 
-    <!-- Mục Thông tin sản phẩm -->
     <div class="section" onclick="toggleContent(this)">
       <h2>🖥️ Thông tin sản phẩm</h2>
       <div class="content">
@@ -152,7 +138,6 @@
       </div>
     </div>
 
-    <!-- Mục Ưu điểm nổi bật -->
     <div class="section" onclick="toggleContent(this)">
       <h2>🚀 Ưu điểm nổi bật</h2>
       <div class="content">
@@ -163,7 +148,6 @@
       </div>
     </div>
 
-    <!-- Mục Khuyến cáo khi sử dụng -->
     <div class="section" onclick="toggleContent(this)">
       <h2>⚠️ Khuyến cáo khi sử dụng</h2>
       <div class="content">
@@ -176,7 +160,6 @@
       </div>
     </div>
 
-    <!-- Mục Giáo viên hướng dẫn -->
     <div class="section" onclick="toggleContent(this)">
       <h2>👨‍🏫 Giáo viên hướng dẫn</h2>
       <div class="content">
@@ -184,28 +167,44 @@
         <p>📝 Cung cấp định hướng và hỗ trợ nhóm trong quá trình nghiên cứu và phát triển dự án.</p>
       </div>
     </div>
-  </div>
 
+   
+  </div>
+</div>
   <script>
     function toggleContent(section) {
-      // Toggle hiển thị nội dung của mục được nhấn
       let content = section.querySelector('.content');
-      let isShowing = content.classList.toggle('show');
-      
-      // Nếu đây là mục "Sản phẩm", thay đổi background
+      content.classList.toggle('show');
+    }
+  </script>
+  <script>
+    function toggleContent(section) {
+      let content = section.querySelector('.content');
+      content.classList.toggle('show');
+
+      // Nếu mục "Sản phẩm" được bấm, thay đổi background
       if (section.querySelector("h2").textContent.includes("Sản phẩm")) {
-        let videoBg = document.querySelector('.video-bg');
-        if (isShowing) {
-          // Khi mở: ẩn video background và chuyển sang background hình ảnh
-          videoBg.style.display = 'none';
+        document.body.style.backgroundImage = "url('https://images.squarespace-cdn.com/content/v1/5930dc9237c5817c00b10842/3bde8815-523c-4001-9bc6-bfae94398e9e/20220109_AI-robot.jpg')";
+      }
+    }
+</script>
+  <script>
+    function toggleContent(section) {
+      let content = section.querySelector('.content');
+      content.classList.toggle('show');
+      
+      // Nếu đây là section "Sản phẩm", thay đổi background
+      if (section.querySelector("h2").textContent.includes("Sản phẩm")) {
+        if (content.classList.contains('show')) {
+          // Nếu nội dung được hiển thị, đổi background thành hình mới
           document.body.style.backgroundImage = "url('https://images.squarespace-cdn.com/content/v1/5930dc9237c5817c00b10842/3bde8815-523c-4001-9bc6-bfae94398e9e/20220109_AI-robot.jpg')";
         } else {
-          // Khi đóng: hiện lại video background và xóa background hình ảnh
-          videoBg.style.display = 'block';
-          document.body.style.backgroundImage = "none";
+          // Nếu nội dung bị ẩn, trở lại background ban đầu
+          document.body.style.backgroundImage = "url('https://www.tlciscreative.com/wp-content/uploads/2024/08/A.I-2.gif')";
         }
       }
     }
   </script>
 </body>
 </html>
+ 
