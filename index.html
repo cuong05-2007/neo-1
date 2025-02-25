@@ -184,6 +184,34 @@
       content.classList.toggle('show');
     }
   </script>
+  <script>
+    function toggleContent(section) {
+      let content = section.querySelector('.content');
+      content.classList.toggle('show');
+
+      // Nếu mục "Sản phẩm" được bấm, thay đổi background
+      if (section.querySelector("h2").textContent.includes("Sản phẩm")) {
+        document.body.style.backgroundImage = "url('https://images.squarespace-cdn.com/content/v1/5930dc9237c5817c00b10842/3bde8815-523c-4001-9bc6-bfae94398e9e/20220109_AI-robot.jpg')";
+      }
+    }
+</script>
+  <script>
+    function toggleContent(section) {
+      let content = section.querySelector('.content');
+      content.classList.toggle('show');
+      
+      // Nếu đây là section "Sản phẩm", thay đổi background
+      if (section.querySelector("h2").textContent.includes("Sản phẩm")) {
+        if (content.classList.contains('show')) {
+          // Nếu nội dung được hiển thị, đổi background thành hình mới
+          document.body.style.backgroundImage = "url('https://images.squarespace-cdn.com/content/v1/5930dc9237c5817c00b10842/3bde8815-523c-4001-9bc6-bfae94398e9e/20220109_AI-robot.jpg')";
+        } else {
+          // Nếu nội dung bị ẩn, trở lại background ban đầu
+          document.body.style.backgroundImage = "url('https://www.tlciscreative.com/wp-content/uploads/2024/08/A.I-2.gif')";
+        }
+      }
+    }
+  </script>
 </body>
 </html>
  
