@@ -76,6 +76,10 @@
       list-style-type: none;
       padding: 0;
     }
+    a {
+      color: #00AFFF;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -90,6 +94,15 @@
       <li>😁 Mai Phúc Đông</li>
       <li>😬 Lê Hoàng Thiên Phúc</li>
     </ul>
+	    <!-- Mục Sản phẩm mới -->
+    <div class="section" onclick="toggleContent(this)">
+      <h2>🛍️ Sản phẩm</h2>
+      <div class="content">
+        <p>🎦Truy cập vào trang sản phẩm nhận diện tay trái: <a href="https://cuong05-2007.github.io/neo2/" target="_blank">https://cuong05-2007.github.io/neo2/</a></p>
+      </div>
+    
+    
+  </div>
 
     <div class="section" onclick="toggleContent(this)">
       <h2>🎯 Kiến thức nền</h2>
@@ -154,8 +167,17 @@
         <p>📝 Cung cấp định hướng và hỗ trợ nhóm trong quá trình nghiên cứu và phát triển dự án.</p>
       </div>
     </div>
-  </div>
 
+    <!-- Mục Sản phẩm mới -->
+    <div class="section" onclick="toggleContent(this)">
+      <h2>🛍️ Sản phẩm</h2>
+      <div class="content">
+        <p>Truy cập vào trang sản phẩm tại: <a href="https://cuong05-2007.github.io/neo2/" target="_blank">https://cuong05-2007.github.io/neo2/</a></p>
+      </div>
+    </div>
+    
+  </div>
+</div>
   <script>
     function toggleContent(section) {
       let content = section.querySelector('.content');
@@ -164,3 +186,4 @@
   </script>
 </body>
 </html>
+ 
